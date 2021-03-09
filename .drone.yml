@@ -13,7 +13,7 @@ steps:
 - name: package
   image: kalka/packmaker
   commands:
-  - zip -r Wolfpack-Odin.zip .minecraft update.py update.bat instance.cfg mmc-pack.json wolfpackodin.png
+  - zip -r Wolfpack-Legacy.zip .minecraft update.py update.bat instance.cfg mmc-pack.json
   - zip -r config.zip .minecraft mmc-pack.json
 # - name: mod-list
 #   image: python
