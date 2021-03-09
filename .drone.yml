@@ -15,13 +15,13 @@ steps:
   commands:
   - zip -r Wolfpack-Legacy.zip .minecraft update.py update.bat instance.cfg mmc-pack.json
   - zip -r config.zip .minecraft mmc-pack.json
-# - name: mod-list
-#   image: python
-#   commands:
-#   - python -VVV
-#   - pip install aiohttp[speedups]
-#   - pip install urllib3
-#   - python raw_mod_list.py
+ - name: mod-list
+   image: python
+   commands:
+   - python -VVV
+   - pip install aiohttp[speedups]
+   - pip install urllib3
+   - python raw_mod_list.py
 - name: upload
   image: plugins/gitea-release
   settings:
@@ -34,7 +34,7 @@ steps:
       - Wolfpack-Legacy.zip
       - config.zip
       - packmaker.lock
-      # - modlist.db
+      - modlist.db
   when:
     event: tag
 
