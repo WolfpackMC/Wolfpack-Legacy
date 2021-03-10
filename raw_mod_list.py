@@ -62,6 +62,11 @@ def get_gitea_data(): #single threaded, not needed to be intensive
         mod_data_json = json.loads(mod_data.data)
     return mod_data_json
 
+def get_logo(attachments):
+    for l in attachments:
+        if l['isDefault']:
+            return l['thumbnailUrl']
+
 def main():
     logging.info("Awoo!")
     start_time = time.time()
@@ -74,12 +79,12 @@ def main():
     for r in responses:
         json_response = json.loads(r)
         clean_data = {
-            "id": json_response["id"],
-            "name": json_response["name"],
-            "summary": json_response["summary"],
-            "website_url": json_response["websiteUrl"],
-            "logo": json_response["attachments"][0]["thumbnailUrl"],
-            "slug": json_response["slug"]
+            "id": json_response.get("id"),
+            "name": json_response.get("name"),
+            "summary": json_response.get("summary"),
+            "website_url": json_response.get("website_url"),
+            "logo": get_logo(json_response.get("attachments", {})),
+            "slug": json_response.get("slug")
         }
         data.append(clean_data)
     
