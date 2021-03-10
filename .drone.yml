@@ -15,7 +15,7 @@ steps:
   commands:
   - zip -r Wolfpack-Legacy.zip .minecraft update.py update.bat instance.cfg mmc-pack.json
   - zip -r config.zip .minecraft mmc-pack.json
- - name: mod-list
+- name: mod-list
    image: python
    commands:
    - python -VVV
