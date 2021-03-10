@@ -16,12 +16,12 @@ steps:
   - zip -r Wolfpack-Legacy.zip .minecraft update.py update.bat instance.cfg mmc-pack.json
   - zip -r config.zip .minecraft mmc-pack.json
 - name: mod-list
-   image: python
-   commands:
-   - python -VVV
-   - pip install aiohttp[speedups]
-   - pip install urllib3
-   - python raw_mod_list.py
+  image: python
+  commands:
+  - python -VVV
+  - pip install aiohttp[speedups]
+  - pip install urllib3
+  - python raw_mod_list.py
 - name: upload
   image: plugins/gitea-release
   settings:
