@@ -19,8 +19,6 @@ steps:
   image: python
   commands:
   - python -VVV
-  - pip install aiohttp[speedups]
-  - pip install urllib3
   - python raw_mod_list.py
 - name: upload
   image: plugins/gitea-release
