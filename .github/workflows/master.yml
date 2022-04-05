@@ -1,0 +1,37 @@
+
+name: modpack-build-latest
+
+on:
+  push:
+    branches: [ master ]
+
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: kalka/wolfpackmaker:latest
+    steps:
+      - name: "Checkout local repository"
+        uses: actions/checkout@v2
+      - name: "Clone wolfpackmaker"
+        run: git clone https://github.com/WolfpackMC/wolfpackmaker.git src
+      - name: "Assemble lockfile"
+        run: python3 src/src/wolfpackmaker/lock.py
+      - name: "Get repo name"
+        run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+        shell: bash
+      - name: "Package modpack contents"
+        run: zip -r ${{ env.REPOSITORY_NAME }}.zip src/src/launch.py src/src/wolfpackmaker/wolfpackmaker.py src/src/wolfpackmaker/util.py src/wolfpackmaker.bat src/wolfpackmaker.sh src/requirements-client.txt src/multimc.bat src/multimc.sh .minecraft instance.cfg mmc-pack.json *.png
+      - name: "Package config"
+        run: zip -r config.zip .minecraft mmc-pack.json
+      - name: Publish release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          files: |
+            manifest.*
+            *.zip

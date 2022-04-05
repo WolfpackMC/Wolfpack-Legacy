@@ -1,9 +1,5 @@
-authors:
-- Kalka
-files:
-- location: overrides
-forge: 14.23.5.2855
-minecraft: 1.12.2
+modloader: Forge
+version: 1.12.2
 mods:
 - sbm-wooden-shears:
 - abyssalcraft:
@@ -196,14 +192,10 @@ mods:
 - instantunify:
 - lumberjack:
 - optifine:
-    url: 'https://get.kalka.io/Optifine?version=OptiFine_1.12.2_HD_U_G5.jar'
+    url: 'https://get.vulpera.com/Optifine?version=preview_OptiFine_1.12.2_HD_U_G6_pre1.jar'
 - galacticraft:
     url: 'https://micdoodle8.com/new-builds/GC-1.12/280/GalacticraftCore-1.12.2-4.0.2.280.jar'
 - galacticraft-planets:
     url: 'https://micdoodle8.com/new-builds/GC-1.12/280/Galacticraft-Plants-1.12.2-4.0.2.280.jar'
 - micdoodlecore:
     url: 'https://micdoodle8.com/new-builds/GC-1.12/280/MicdoodleCore-1.12.2-4.0.2.280.jar'
-name: Wolfpack-Legacy
-resourcepacks: []
-title: Wolfpack-Legacy
-version: 1.0.0
