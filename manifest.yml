@@ -74,14 +74,15 @@ mods:
 - fastworkbench:
 - foamfix-optimization-mod:
 - forestry:
-- forge-multipart-cbe:
-- ftb-backups:
-- ftb-utilities:
-- ftb-library:
+- cb-multipart:
+- ftb-backups-forge:
+- ftb-utilities-forge:
+- ftb-library-forge:
 - gendustry:
 - guide-api:
 - immersive-petroleum:
 - immersive-tech:
+    id: 274159
 - industrial-craft:
 - industrial-foregoing:
 - industrial-wires:
@@ -128,13 +129,13 @@ mods:
 - plants:
 - pressure-pipes:
 - project-intelligence:
-- project-red-base:
+- project-red-core:
 - project-red-compat:
 - project-red-fabrication:
 - project-red-integration:
-- project-red-lighting:
-- project-red-mechanical:
-- project-red-world:
+- project-red-illumination:
+- project-red-expansion:
+- project-red-exploration:
 - quark:
 - quick-leaf-decay:
 - randompatches-forge:
